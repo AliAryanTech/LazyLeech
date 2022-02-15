@@ -46,7 +46,7 @@ def post_to_telegraph(a_title: str, content: str) -> str:
     return post_page["url"]
 
 
-@Client.on_message(filters.command('mediainfo', 'minfo') & filters.chat(ALL_CHATS))
+@Client.on_message(filters.command('mediainfo') & filters.chat(ALL_CHATS))
 async def mediainfo(client, message):
     reply = message.reply_to_message
     if not reply:
