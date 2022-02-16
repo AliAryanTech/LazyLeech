@@ -72,7 +72,7 @@ async def mediainfo(client, message):
     if x_media is None:
        await process.edit_text("Reply To a Valid Media Format")
        return
-    media_type = str(type(x_media)).split("'")[1]
+    media_type = reply.video.file_name
     file_path = safe_filename(await reply.download())
     output_ = await runcmd(f'mediainfo "{file_path}"')
     out = None
